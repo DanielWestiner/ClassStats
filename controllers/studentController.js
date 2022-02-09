@@ -18,8 +18,8 @@ const grade = async (studentId) =>
     },
     {
       // Your code here
-      $avg: 'score'
-    },
+      $group: { _id: studentID, averageGrade: { $avg: '$assignments.score' }
+    }},
   ]);
 
 module.exports = {
